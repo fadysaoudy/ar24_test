@@ -28,7 +28,7 @@ class HttpWrapper implements HttpWrapperInterface
         $this->setToken(config('ar24.ar24_token'));
         $this->setSecret(config('ar24.ar24_key'));
         $this->setVerify(true);
-        $this->setTimeout(30);
+        $this->setTimeout(config('ar24.request_time_out'));
 
 
     }
