@@ -43,7 +43,14 @@ class EmailController extends Controller
 
     public function getEmailInfo(EmailGetInfoRequest $request): View|RedirectResponse
     {
-        // try to parse the response as I did before, but I received and Exception: You tried to access a resource that is not related to your API (user has not granted API access)
+        /**
+         * This function retrieves information about an email using the provided EmailGetInfoRequest object as
+         * the request parameters. If the email is found, the user is redirected to the home page with a success
+         * message. If there is an error, the user is shown an error page with the error message.
+         * try to parse the response as I did before, but I received and Exception: You tried to access a resource that is not related to your API (user has not granted API access)
+         */
+
+
         try {
             $this->emailService->get($request);
             return redirect()->intended(RouteServiceProvider::HOME)->with('success', 'Email retrieved Successfully.');

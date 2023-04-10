@@ -41,6 +41,12 @@ class UserService implements UserServiceInterface
      */
     public function get(UserGetRequest $request):stdClass
     {
+        /**
+         * This function sends a GET request to retrieve user data, using the provided UserGetRequest object
+         * as the request parameters. The response is expected to be in JSON format, but may include additional
+         * data that needs to be cleaned up. The function parses the response to extract the 'result' field,
+         * which contains the relevant user data. The cleaned up response is returned as a stdClass object.
+         */
 
         $headers = ['Content-Type' => 'application/x-www-form-urlencoded'];
         try {
